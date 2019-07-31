@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    driverClassName: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://127.0.0.1:3306/ISSUE_DB
+    username: root
+    password: webcash
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+    
+    
+    
+  http:
+    encoding:      charset: UTF-8
+      enabled: true
+      force: true
+      

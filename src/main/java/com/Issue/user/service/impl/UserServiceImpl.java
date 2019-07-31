@@ -1,22 +1,26 @@
 package com.Issue.user.service.impl;
 
-import com.Issue.base.entity.Result;
-import com.Issue.user.data.SignInData;
-import com.Issue.user.data.SignUpData;
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.Issue.user.entity.User;
+import com.Issue.user.repository.UserRepository;
 import com.Issue.user.service.UserService;
 
-public class UserServiceImpl  implements UserService {
+@Service("userService")
+@Transactional
+public class UserServiceimpl implements UserService{
 
-	@Override
-	public Result SignIn(SignInData data) {
-		// TODO Auto-generated method stub
-		return null;
+	@Autowired
+	private UserRepository userRepository;
+	
+	public User findOne(String name) {
+		System.out.println("name"+name);
+		return this.userRepository.findByName(name);
 	}
-
-	@Override
-	public Result SignUp(SignUpData data) {
-		return null;
-		
-	}
-
+	
+	
+	
 }
