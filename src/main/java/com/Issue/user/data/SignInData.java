@@ -9,7 +9,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true) //Method Chaining
 public class SignInData {
 	@NotBlank
-	private String name;
+	private String id;
 	@NotBlank
 	private String password;
 }

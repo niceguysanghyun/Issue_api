@@ -1,6 +1,7 @@
 package com.Issue.user.controller;
 
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,15 +23,24 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-	@PostMapping("signIn")
+	@PostMapping("signUp")
 	public Result Signin(@RequestBody @Validated SignInData data) {
-		 return new Result().success();
+		 
 	}
 	
-	@GetMapping("test")
-	public User test(@RequestParam String name) {
-		System.out.println(name);
-		 return this.userService.findOne(name);
+	@PostMapping("signIn")
+	//@RequestBody Map<String, Object> input
+	public Result test(@RequestBody @Validated SignInData input) {
+		String accessToken = userService.SignIn(input);
+		
+		Result rslt = new Result();
+		if(accessToken == null) {
+			rslt.fali(101,"일치하지 않는  패스워드");
+		}
+		else {
+			rslt.success(accessToken);
+		}
+		return rslt;
 	}
 	
 	@GetMapping("test2")

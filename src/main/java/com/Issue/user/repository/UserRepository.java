@@ -9,5 +9,6 @@ import com.Issue.user.entity.User;
 public interface UserRepository extends JpaRepository<User, Long>{
 
 	User findByName(String name);
-
+	User findById(String Id);
+	User findByIdAndPassword(String Id,String password);
 }

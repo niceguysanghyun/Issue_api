@@ -17,6 +17,9 @@ import lombok.NoArgsConstructor;
 public class User {
 
 	@Id
+	@Column(name ="id")
+	private String id;
+	
 	@Column(name ="name")
 	private String name;
 	
@@ -24,7 +27,7 @@ public class User {
 	@Column(name ="password",nullable=false)
 	private String password;
 	
-	@Column(name ="phone")
-	private String phone;
+	@Column(name ="email")
+	private String email;
 	
 }
