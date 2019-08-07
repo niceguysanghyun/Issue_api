@@ -6,4 +6,5 @@ public interface JwtService {
 	public <T> String create(User user, String subject);
 	public byte[] generateKey();
 	public boolean isUsable(String jwt);
+	public String getUserId(String jwt);
 }

@@ -73,6 +73,9 @@ public class JwtServiceImpl implements JwtService{
 		}
 	}
 	
-
+	 @Override
+	 public String getUserId(String jwt) {
+		 return Jwts.parser().setSigningKey(this.generateKey()).parseClaimsJws(token).getBody().getId();
+	 }
 
 }

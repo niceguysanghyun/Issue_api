@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.Issue.base.entity.Result;
 import com.Issue.user.data.SignInData;
+import com.Issue.user.data.SignUpData;
 import com.Issue.user.entity.User;
 import com.Issue.user.service.UserService;
 
@@ -24,13 +25,13 @@ public class UserController {
 	UserService userService;
 	
 	@PostMapping("signUp")
-	public Result Signin(@RequestBody @Validated SignInData data) {
-		 
+	public Result SignUp(@RequestBody @Validated SignUpData data) {
+		 return userService.SignUp(data);
 	}
 	
 	@PostMapping("signIn")
 	//@RequestBody Map<String, Object> input
-	public Result test(@RequestBody @Validated SignInData input) {
+	public Result SignIn(@RequestBody @Validated SignInData input) {
 		String accessToken = userService.SignIn(input);
 		
 		Result rslt = new Result();

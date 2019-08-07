@@ -5,6 +5,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.Issue.base.entity.Result;
 import com.Issue.user.data.SignInData;
 import com.Issue.user.data.SignUpData;
 import com.Issue.user.entity.User;
@@ -16,5 +17,6 @@ public interface UserService {
 	public User findOne(String name); 
 	public User findById(String id); 
 	public String SignIn(SignInData data);
-	public String SignUp(SignUpData data);
+	public Result SignUp(SignUpData data);
+	public boolean isDuplicate(String id);
 }

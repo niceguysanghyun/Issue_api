@@ -11,4 +11,5 @@ public class SignInErrorException extends ServiceException{
 	public SignInErrorException() {
 		super(10000,"아이디 혹은 패스워드가 맞지 않습니다.");
 	}
+	
 }
