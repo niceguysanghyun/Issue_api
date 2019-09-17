@@ -1,6 +1,10 @@
 package com.Issue.user.entity;
 
 import javax.persistence.Entity;
+import com.Issue.board.entity.*;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 
 
@@ -29,5 +33,6 @@ public class User {
 	
 	@Column(name ="email")
 	private String email;
+	
 	
 }

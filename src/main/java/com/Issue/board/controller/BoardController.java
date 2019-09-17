@@ -8,8 +8,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Issue.auth.service.JwtService;
+import com.Issue.board.service.BoardService;
 import com.Issue.user.entity.User;
+import java.util.List;
 
+import com.Issue.board.entity.Board;
 @RestController
 @RequestMapping("/board")
 public class BoardController {
@@ -18,12 +21,10 @@ public class BoardController {
 	private JwtService jwtService;
 	
 	@Autowired
-	User user;
+	private BoardService Boardservice;
 	
 	@PostMapping("test")
-	public String test(@RequestParam String test) {
-		System.out.println();
-		
-		return "test";
+	public List<Board> test(@RequestParam String tag) {
+		return Boardservice.findAllbyTag(tag);
 	}
 }

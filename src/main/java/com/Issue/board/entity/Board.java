@@ -1,5 +1,6 @@
 package com.Issue.board.entity;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -12,7 +13,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@Table(name="tb_user_info")
+@Table(name="tb_board_info")
 @NoArgsConstructor
 @AllArgsConstructor
 @IdClass(PK_Board.class)
@@ -37,8 +38,6 @@ public class Board {
 	
 	@Column(name="CONTENT")
 	String CONTENT;
-	
-	
 	
 	
 }

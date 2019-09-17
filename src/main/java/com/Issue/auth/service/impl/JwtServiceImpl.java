@@ -22,10 +22,10 @@ public class JwtServiceImpl implements JwtService{
 	@Override
 	public <T> String create(User user, String subject) {
         Date expireTime = new Date();
-        expireTime.setTime(expireTime.getTime() + 1000 * 60 * 1);
+        expireTime.setTime(expireTime.getTime() + 1000 * 60 * 60); //한시간
 		
         Map<String, Object> map= new HashMap<String, Object>();
-        
+        System.out.println("ExpireTime : "+expireTime);
         map.put("id"   ,user.getId());
         map.put("email",user.getEmail());
         map.put("name" , user.getName());
