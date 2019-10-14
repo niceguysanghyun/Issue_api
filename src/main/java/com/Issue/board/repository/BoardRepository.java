@@ -9,4 +9,6 @@ import com.Issue.board.entity.Board;
 @Repository
 public interface BoardRepository extends JpaRepository<Board, Long>{
 	List<Board> findAllByTag(String Tag);
+	@SuppressWarnings("unchecked")
+	Board saveAndFlush(Board board);
 }

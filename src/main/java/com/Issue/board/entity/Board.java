@@ -25,7 +25,7 @@ public class Board {
 	
 	@Id
 	@Column(name="BOARD_NO")
-	int BOARD_NO;
+	long BOARD_NO;
 	
 	@Column(name="REG_ID")
 	String REG_ID;

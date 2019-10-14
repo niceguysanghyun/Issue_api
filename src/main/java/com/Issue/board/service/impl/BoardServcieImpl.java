@@ -17,8 +17,20 @@ public class BoardServcieImpl implements BoardService{
 	@Override
 	public List<Board> findAllbyTag(String tag) {
 	
-		List<Board> data = Boardrepository.findAllByTag(tag);
-		
-		return data;
+		return Boardrepository.findAllByTag(tag);
 	}
+
+	@Override
+	public Boolean InsertOne(Board data) {
+		
+		
+		return true;
+	}
+
+	@Override
+	public Boolean isDuplicate(Board data) {
+		return null;
+	}
+
+
 }
